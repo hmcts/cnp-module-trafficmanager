@@ -5,13 +5,13 @@ Terraform Module for creating a Traffic Manager Profile with Endpoints.
 
 Names | Type | Required | Description
 --- | --- | --- | --- |
-`backend_name` | String | Yes | name of the backend
-`backend_pip` | String | Yes | public ip of the backend
+`backend_name` | String | Yes | Name of the backend
+`backend_pip` | String | Yes | Public ip of the backend
 `public_hostname` | String | Yes | The public hostanme to use when accessing app frontend
 `product` | String | Yes | The name of your application
 `env` | String | Yes | The deployment environment (sandbox, aat, prod etc..)
-`common_tags` | Maps | Yes | common tags
-`resource_group` | String | Yes | name of the resource group
+`common_tags` | Maps | Yes | Common tags
+`resource_group` | String | Yes | Name of the resource group
 
 ## Usage
 
