@@ -2,7 +2,7 @@ locals {
   traffic_manager_endpoints = [
     {
       name        = "shutter-page"
-      target      = "${var.shutter-page_target}"
+      target      = "${var.shutter_page_target}"
       priority    = "1"
       status      = "Disabled"
       host_header = ""

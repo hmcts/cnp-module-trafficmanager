@@ -1,4 +1,4 @@
-variable "shutter-page_target" {
+variable "shutter_page_target" {
   type        = "string"
   description = "Shutter page target address"
 }
