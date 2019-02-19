@@ -1,32 +1,14 @@
-locals {
-  traffic_manager_endpoints = [
-    {
-      name        = "shutter-page"
-      target      = "${var.shutter_page_target}"
-      priority    = "1"
-      status      = "Disabled"
-      host_header = ""
-    },
-    {
-      name        = "${var.backend_name}"
-      target      = "${var.backend_pip}"
-      priority    = "2"
-      status      = "Enabled"
-      host_header = "${var.public_hostname}" // // This has to be the same hostname used in the listeners of the WAF
-    }
-  ]
-}
 
 data "template_file" "endpoints" {
   template = "${file("${path.module}/templates/traffic-manager-endpoint.tpl")}"
-  count    = "2"
+  count    = "${var.endpoints_count}"
 
   vars {
-    name        = "${lookup(local.traffic_manager_endpoints[count.index], "name")}"
-    target      = "${lookup(local.traffic_manager_endpoints[count.index], "target")}"
-    priority    = "${lookup(local.traffic_manager_endpoints[count.index], "priority")}"
-    status      = "${lookup(local.traffic_manager_endpoints[count.index], "status")}"
-    host_header = "${lookup(local.traffic_manager_endpoints[count.index], "host_header")}"
+    name        = "${lookup(var.traffic_manager_endpoints[count.index], "name")}"
+    target      = "${lookup(var.traffic_manager_endpoints[count.index], "target")}"
+    priority    = "${lookup(var.traffic_manager_endpoints[count.index], "priority")}"
+    status      = "${lookup(var.traffic_manager_endpoints[count.index], "status")}"
+    host_header = "${lookup(var.traffic_manager_endpoints[count.index], "host_header")}"
   }
 }
 
