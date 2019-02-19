@@ -5,12 +5,12 @@ variable "shutter-page_target" {
 
 variable "backend_name" {
   type        = "string"
-  description = "name of the backend"
+  description = "Name of the backend"
 }
 
 variable "backend_pip" {
   type        = "string"
-  description = "public ip of the backend"
+  description = "Public ip of the backend"
 }
 
 
@@ -36,6 +36,6 @@ variable "common_tags" {
 
 variable "resource_group" {
   type        = "string"
-  description = "name of the resource group"
+  description = "Name of the resource group"
 }
 
