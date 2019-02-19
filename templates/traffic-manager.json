@@ -2,6 +2,9 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "org_name": {
+            "type": "string"
+        },        
         "name": {
             "type": "string"
         },
@@ -28,8 +31,8 @@
                 "profileStatus": "Enabled",
                 "trafficRoutingMethod": "Priority",
                 "dnsConfig": {
-                    "relativeName": "[concat('hmcts-', parameters('name'))]",
-                    "fqdn": "[concat('hmcts-', parameters('name'),'.trafficmanager.net')]",
+                    "relativeName": "[concat(parameters('org_name'), parameters('name'))]",
+                    "fqdn": "[concat(parameters('org_name'), parameters('name'),'.trafficmanager.net')]",
                     "ttl": 100
                 },
                 "monitorConfig": {

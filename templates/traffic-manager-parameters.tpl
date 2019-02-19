@@ -1,4 +1,7 @@
 {
+  "org_name": {
+    "value": "${org_name}"
+  },
   "name": {
     "value": "${name}"
   },
