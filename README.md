@@ -11,6 +11,7 @@ Names | Type | Required | Description
 `resource_group` | String | Yes | Name of the resource group
 `org_name` | String | Yes | Organization name
 `traffic_manager_endpoints` | String | Yes | Traffic Manager endpoints
+`endpoints_count` | String | Yes | Number of Traffic Manager endpoint
 
 ## Usage
 
@@ -44,6 +45,7 @@ module "trafficManagerProfile" {
   resource_group            = "${azurerm_resource_group.shared_resource_group.name}"
   org_name                  = "your_organization_name"
   traffic_manager_endpoints = "${local.traffic_manager_endpoints}"
+  endpoints_count           = "2"
 }
 
 ```

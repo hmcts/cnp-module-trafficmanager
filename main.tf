@@ -1,7 +1,7 @@
 
 data "template_file" "endpoints" {
   template = "${file("${path.module}/templates/traffic-manager-endpoint.tpl")}"
-  count    = "${length(var.traffic_manager_endpoints)}"
+  count    = "${var.endpoints_count}"
 
   vars {
     name        = "${lookup(var.traffic_manager_endpoints[count.index], "name")}"

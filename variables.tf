@@ -25,4 +25,9 @@ variable "resource_group" {
 
 variable "traffic_manager_endpoints" {
   type = "list"
+  description = "Traffic Manager Endpoint list"
+}
+
+variable "endpoints_count" {
+  description = "Number of Traffic Manager endpoint"
 }
