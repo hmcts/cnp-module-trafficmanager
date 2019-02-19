@@ -1,3 +1,8 @@
+variable "shutter-page_target" {
+  type        = "string"
+  description = "Shutter page target address"
+}
+
 variable "backend_name" {
   type        = "string"
   description = "name of the backend"

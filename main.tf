@@ -2,7 +2,7 @@ locals {
   traffic_manager_endpoints = [
     {
       name        = "shutter-page"
-      target      = "mojmaintenance.azurewebsites.net"
+      target      = "${var.shutter-page_target}"
       priority    = "1"
       status      = "Disabled"
       host_header = ""
