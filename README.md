@@ -13,6 +13,7 @@ Names | Type | Required | Description
 `env` | String | Yes | The deployment environment (sandbox, aat, prod etc..)
 `common_tags` | Maps | Yes | Common tags
 `resource_group` | String | Yes | Name of the resource group
+`org_name` | String | Yes | Organization name
 
 ## Usage
 
@@ -27,6 +28,7 @@ module "trafficManagerProfile" {
   env                     = "${var.env}"
   common_tags             = "${var.common_tags}"
   resource_group          = "${azurerm_resource_group.shared_resource_group.name}"
+  org_name                = "your_organization_name"
 }
 
 ```

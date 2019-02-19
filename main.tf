@@ -34,6 +34,7 @@ data "template_file" "traffic_manager_parameters" {
   template = "${file("${path.module}/templates/traffic-manager-parameters.tpl")}"
 
   vars {
+    org_name  = "${var.org_name}"
     name      = "${var.product}-${var.env}"
     team_name = "${var.common_tags["Team Name"]}"
     endpoints = "${join(",", data.template_file.endpoints.*.rendered)}"

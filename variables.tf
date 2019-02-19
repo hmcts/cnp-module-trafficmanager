@@ -3,6 +3,11 @@ variable "shutter-page_target" {
   description = "Shutter page target address"
 }
 
+variable "org_name" {
+  type        = "string"
+  description = "Organization name"
+}
+
 variable "backend_name" {
   type        = "string"
   description = "Name of the backend"
