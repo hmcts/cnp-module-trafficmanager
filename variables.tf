@@ -24,5 +24,5 @@ variable "resource_group" {
 }
 
 variable "traffic_manager_endpoints" {
-  type = "map"
+  type = "list"
 }
